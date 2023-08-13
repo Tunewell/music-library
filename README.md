@@ -1,64 +1,49 @@
-# Music Player :musical_note:
+# Welcome to [Astro](https://astro.build)
 
-Self-hosted music player.
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
 
-\- _for those of us too stubborn to just use Spotify_
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![](./screenshots/music-player.gif)
+![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
 
-## Features :muscle:
 
--   NBUI (not bad user-interface)
--   Live _active users_ showing what other users are currently listening to
--   Fully mobile and tablet responsive
--   Sources tracks from file-system
--   Supported File Formats
-    -   MP3
-    -   FLAC
--   Uses track metadata - (falls-back to filename if no [tags](https://www.mp3tag.de/en/) found)
-    -   Title
-    -   Artist
-    -   Album Artist
-    -   Album
-    -   Cover Art
+## 🚀 Project Structure
 
-## How to setup :bulb:
+Inside of your Astro project, you'll see the following folders and files:
 
-### Pull from Docker Hub _(the easy way :)_
-
-1. Create a `docker-compose.yml` file
-
-```bash
-version: "3"
-
-services:
-  music-player:
-    image: hmerritt/music-library-player:latest
-
-    environment:
-        # Client
-        - REACT_APP_HTTP=http
-        - REACT_APP_HOST=localhost:7788
-        - REACT_APP_API=http://localhost:7789
-        # Server
-        # Specify up to 5 music directories
-        - MUSIC_DIR_NAME=Main
-        - MUSIC_DIR2_NAME=Second
-        - MUSIC_DIR2_NAME=Third
-
-    ports:
-      - 7788:80
-      - 7789:8000
-
-    volumes:
-      - path-to-caching-dir:/app/data
-      - path-to-your-music:/app/music
-      - path-to-your-music:/app/music2
-      - path-to-your-music:/app/music3
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-2. Run docker image using `docker-compose`
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-```bash
-$ docker-compose up
-```
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                             |
+| :--------------------- | :------------------------------------------------- |
+| `npm install`          | Installs dependencies                              |
+| `npm run dev`          | Starts local dev server at `localhost:3000`        |
+| `npm run build`        | Build your production site to `./dist/`            |
+| `npm run preview`      | Preview your build locally, before deploying       |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `npm run astro --help` | Get help using the Astro CLI                       |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
